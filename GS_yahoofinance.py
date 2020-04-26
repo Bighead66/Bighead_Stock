@@ -21,4 +21,4 @@ def get_stock_price():
         except KeyboardInterrupt:
             print("\n=> Keyboard Interrupt! Exiting Program...")
             sys.exit()
-get_stock_price()
+get_stock_price("AAPL")
