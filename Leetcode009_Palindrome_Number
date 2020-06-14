@@ -1,0 +1,38 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        numL = []
+        x_orignal = x
+        if (x < 0): 
+            return False
+        elif x == 0: 
+            return True
+        else: 
+            if (x % 10 == 0):
+                return False
+            while (x // 10 != 0) or (x % 10 != 0):
+                temp = x % 10
+                x = x // 10
+                numL.append(temp)
+            result_str = [str(i) for i in numL]
+            result_int = int("".join(result_str))
+            #print(result_int)
+            if (result_int == x_orignal):     
+                return True
+            else: 
+                return False
+
+
+
+
+inputN1 = 123
+inputN2 = 121
+inputN3 = 10
+inputN4 = -121
+inputN5 = 0
+
+mySol = Solution()
+print(mySol.isPalindrome(inputN1))
+print(mySol.isPalindrome(inputN2))
+print(mySol.isPalindrome(inputN3))
+print(mySol.isPalindrome(inputN4))
+print(mySol.isPalindrome(inputN5))
